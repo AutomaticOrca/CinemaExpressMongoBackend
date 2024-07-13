@@ -1,0 +1,1022 @@
+[
+    {
+        "_id": "ObjectId('573a1391f29313caabd95552')",
+        "plot": "In the peaceful countryside, Vassily opposes the rich kulaks over the...",
+        "genres": [
+            "Drama"
+        ],
+        "runtime": 75,
+        "cast": [
+            "Stepan Shkurat",
+            "Semyon Svashenko",
+            "Yuliya Solntseva",
+            "Yelena Maksimova"
+        ],
+        "num_mflix_comments": 0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTYxMjQwNjY1NF5BMl5BanBnXkFtZT...",
+        "title": "Earth",
+        "fullplot": "Dovzhenko's 'film poem' style brings to life the collective experience...",
+        "countries": [
+            "Array"
+        ],
+        "released": "1930-10-17T00:00:00.000+00:00",
+        "directors": [
+            "Aleksandr Dovzhenko"
+        ],
+        "writers": [
+            "Aleksandr Dovzhenko"
+        ],
+        "awards": {
+            "wins": 1,
+            "nominations": 1,
+            "text": "1 win & 1 nomination."
+        },
+        "lastupdated": "2015-08-27 00:28:07.760000000",
+        "year": 1930,
+        "imdb": {
+            "rating": 7.5,
+            "votes": 3109,
+            "id": 21590
+        },
+        "type": "movie",
+        "tomatoes": {
+            "viewer": {
+                "dvd": "2002-01-22T00:00:00.000+00:00"
+            },
+            "critic": {
+                "lastUpdated": "2015-09-01T18:10:09.000+00:00"
+            },
+            "rotten": 2,
+            "fresh": 11
+        }
+    },
+    {
+        "_id": "ObjectId('573a1391f29313caabd95553')",
+        "plot": "In the peaceful countryside, Vassily opposes the rich kulaks over the...",
+        "genres": [
+            "Drama"
+        ],
+        "runtime": 75,
+        "cast": [
+            "Stepan Shkurat",
+            "Semyon Svashenko",
+            "Yuliya Solntseva",
+            "Yelena Maksimova"
+        ],
+        "num_mflix_comments": 0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTYxMjQwNjY1NF5BMl5BanBnXkFtZT...",
+        "title": "Movie Title 2",
+        "fullplot": "Dovzhenko's 'film poem' style brings to life the collective experience...",
+        "countries": [
+            "Array"
+        ],
+        "released": "1930-10-17T00:00:00.000+00:00",
+        "directors": [
+            "Aleksandr Dovzhenko"
+        ],
+        "writers": [
+            "Aleksandr Dovzhenko"
+        ],
+        "awards": {
+            "wins": 1,
+            "nominations": 1,
+            "text": "1 win & 1 nomination."
+        },
+        "lastupdated": "2015-08-27 00:28:07.760000000",
+        "year": 1931,
+        "imdb": {
+            "rating": 7.5,
+            "votes": 3109,
+            "id": 21590
+        },
+        "type": "movie",
+        "tomatoes": {
+            "viewer": {
+                "dvd": "2002-01-22T00:00:00.000+00:00"
+            },
+            "critic": {
+                "lastUpdated": "2015-09-01T18:10:09.000+00:00"
+            },
+            "rotten": 2,
+            "fresh": 11
+        }
+    },
+    {
+        "_id": "ObjectId('573a1391f29313caabd95554')",
+        "plot": "In the peaceful countryside, Vassily opposes the rich kulaks over the...",
+        "genres": [
+            "Drama"
+        ],
+        "runtime": 75,
+        "cast": [
+            "Stepan Shkurat",
+            "Semyon Svashenko",
+            "Yuliya Solntseva",
+            "Yelena Maksimova"
+        ],
+        "num_mflix_comments": 0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTYxMjQwNjY1NF5BMl5BanBnXkFtZT...",
+        "title": "Movie Title 3",
+        "fullplot": "Dovzhenko's 'film poem' style brings to life the collective experience...",
+        "countries": [
+            "Array"
+        ],
+        "released": "1930-10-17T00:00:00.000+00:00",
+        "directors": [
+            "Aleksandr Dovzhenko"
+        ],
+        "writers": [
+            "Aleksandr Dovzhenko"
+        ],
+        "awards": {
+            "wins": 1,
+            "nominations": 1,
+            "text": "1 win & 1 nomination."
+        },
+        "lastupdated": "2015-08-27 00:28:07.760000000",
+        "year": 1932,
+        "imdb": {
+            "rating": 7.5,
+            "votes": 3109,
+            "id": 21590
+        },
+        "type": "movie",
+        "tomatoes": {
+            "viewer": {
+                "dvd": "2002-01-22T00:00:00.000+00:00"
+            },
+            "critic": {
+                "lastUpdated": "2015-09-01T18:10:09.000+00:00"
+            },
+            "rotten": 2,
+            "fresh": 11
+        }
+    },
+    {
+        "_id": "ObjectId('573a1391f29313caabd95555')",
+        "plot": "In the peaceful countryside, Vassily opposes the rich kulaks over the...",
+        "genres": [
+            "Drama"
+        ],
+        "runtime": 75,
+        "cast": [
+            "Stepan Shkurat",
+            "Semyon Svashenko",
+            "Yuliya Solntseva",
+            "Yelena Maksimova"
+        ],
+        "num_mflix_comments": 0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTYxMjQwNjY1NF5BMl5BanBnXkFtZT...",
+        "title": "Movie Title 4",
+        "fullplot": "Dovzhenko's 'film poem' style brings to life the collective experience...",
+        "countries": [
+            "Array"
+        ],
+        "released": "1930-10-17T00:00:00.000+00:00",
+        "directors": [
+            "Aleksandr Dovzhenko"
+        ],
+        "writers": [
+            "Aleksandr Dovzhenko"
+        ],
+        "awards": {
+            "wins": 1,
+            "nominations": 1,
+            "text": "1 win & 1 nomination."
+        },
+        "lastupdated": "2015-08-27 00:28:07.760000000",
+        "year": 1933,
+        "imdb": {
+            "rating": 7.5,
+            "votes": 3109,
+            "id": 21590
+        },
+        "type": "movie",
+        "tomatoes": {
+            "viewer": {
+                "dvd": "2002-01-22T00:00:00.000+00:00"
+            },
+            "critic": {
+                "lastUpdated": "2015-09-01T18:10:09.000+00:00"
+            },
+            "rotten": 2,
+            "fresh": 11
+        }
+    },
+    {
+        "_id": "ObjectId('573a1391f29313caabd95556')",
+        "plot": "In the peaceful countryside, Vassily opposes the rich kulaks over the...",
+        "genres": [
+            "Drama"
+        ],
+        "runtime": 75,
+        "cast": [
+            "Stepan Shkurat",
+            "Semyon Svashenko",
+            "Yuliya Solntseva",
+            "Yelena Maksimova"
+        ],
+        "num_mflix_comments": 0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTYxMjQwNjY1NF5BMl5BanBnXkFtZT...",
+        "title": "Movie Title 5",
+        "fullplot": "Dovzhenko's 'film poem' style brings to life the collective experience...",
+        "countries": [
+            "Array"
+        ],
+        "released": "1930-10-17T00:00:00.000+00:00",
+        "directors": [
+            "Aleksandr Dovzhenko"
+        ],
+        "writers": [
+            "Aleksandr Dovzhenko"
+        ],
+        "awards": {
+            "wins": 1,
+            "nominations": 1,
+            "text": "1 win & 1 nomination."
+        },
+        "lastupdated": "2015-08-27 00:28:07.760000000",
+        "year": 1934,
+        "imdb": {
+            "rating": 7.5,
+            "votes": 3109,
+            "id": 21590
+        },
+        "type": "movie",
+        "tomatoes": {
+            "viewer": {
+                "dvd": "2002-01-22T00:00:00.000+00:00"
+            },
+            "critic": {
+                "lastUpdated": "2015-09-01T18:10:09.000+00:00"
+            },
+            "rotten": 2,
+            "fresh": 11
+        }
+    },
+    {
+        "_id": "ObjectId('573a1391f29313caabd95557')",
+        "plot": "In the peaceful countryside, Vassily opposes the rich kulaks over the...",
+        "genres": [
+            "Drama"
+        ],
+        "runtime": 75,
+        "cast": [
+            "Stepan Shkurat",
+            "Semyon Svashenko",
+            "Yuliya Solntseva",
+            "Yelena Maksimova"
+        ],
+        "num_mflix_comments": 0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTYxMjQwNjY1NF5BMl5BanBnXkFtZT...",
+        "title": "Movie Title 6",
+        "fullplot": "Dovzhenko's 'film poem' style brings to life the collective experience...",
+        "countries": [
+            "Array"
+        ],
+        "released": "1930-10-17T00:00:00.000+00:00",
+        "directors": [
+            "Aleksandr Dovzhenko"
+        ],
+        "writers": [
+            "Aleksandr Dovzhenko"
+        ],
+        "awards": {
+            "wins": 1,
+            "nominations": 1,
+            "text": "1 win & 1 nomination."
+        },
+        "lastupdated": "2015-08-27 00:28:07.760000000",
+        "year": 1935,
+        "imdb": {
+            "rating": 7.5,
+            "votes": 3109,
+            "id": 21590
+        },
+        "type": "movie",
+        "tomatoes": {
+            "viewer": {
+                "dvd": "2002-01-22T00:00:00.000+00:00"
+            },
+            "critic": {
+                "lastUpdated": "2015-09-01T18:10:09.000+00:00"
+            },
+            "rotten": 2,
+            "fresh": 11
+        }
+    },
+    {
+        "_id": "ObjectId('573a1391f29313caabd95558')",
+        "plot": "In the peaceful countryside, Vassily opposes the rich kulaks over the...",
+        "genres": [
+            "Drama"
+        ],
+        "runtime": 75,
+        "cast": [
+            "Stepan Shkurat",
+            "Semyon Svashenko",
+            "Yuliya Solntseva",
+            "Yelena Maksimova"
+        ],
+        "num_mflix_comments": 0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTYxMjQwNjY1NF5BMl5BanBnXkFtZT...",
+        "title": "Movie Title 7",
+        "fullplot": "Dovzhenko's 'film poem' style brings to life the collective experience...",
+        "countries": [
+            "Array"
+        ],
+        "released": "1930-10-17T00:00:00.000+00:00",
+        "directors": [
+            "Aleksandr Dovzhenko"
+        ],
+        "writers": [
+            "Aleksandr Dovzhenko"
+        ],
+        "awards": {
+            "wins": 1,
+            "nominations": 1,
+            "text": "1 win & 1 nomination."
+        },
+        "lastupdated": "2015-08-27 00:28:07.760000000",
+        "year": 1936,
+        "imdb": {
+            "rating": 7.5,
+            "votes": 3109,
+            "id": 21590
+        },
+        "type": "movie",
+        "tomatoes": {
+            "viewer": {
+                "dvd": "2002-01-22T00:00:00.000+00:00"
+            },
+            "critic": {
+                "lastUpdated": "2015-09-01T18:10:09.000+00:00"
+            },
+            "rotten": 2,
+            "fresh": 11
+        }
+    },
+    {
+        "_id": "ObjectId('573a1391f29313caabd95559')",
+        "plot": "In the peaceful countryside, Vassily opposes the rich kulaks over the...",
+        "genres": [
+            "Drama"
+        ],
+        "runtime": 75,
+        "cast": [
+            "Stepan Shkurat",
+            "Semyon Svashenko",
+            "Yuliya Solntseva",
+            "Yelena Maksimova"
+        ],
+        "num_mflix_comments": 0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTYxMjQwNjY1NF5BMl5BanBnXkFtZT...",
+        "title": "Movie Title 8",
+        "fullplot": "Dovzhenko's 'film poem' style brings to life the collective experience...",
+        "countries": [
+            "Array"
+        ],
+        "released": "1930-10-17T00:00:00.000+00:00",
+        "directors": [
+            "Aleksandr Dovzhenko"
+        ],
+        "writers": [
+            "Aleksandr Dovzhenko"
+        ],
+        "awards": {
+            "wins": 1,
+            "nominations": 1,
+            "text": "1 win & 1 nomination."
+        },
+        "lastupdated": "2015-08-27 00:28:07.760000000",
+        "year": 1937,
+        "imdb": {
+            "rating": 7.5,
+            "votes": 3109,
+            "id": 21590
+        },
+        "type": "movie",
+        "tomatoes": {
+            "viewer": {
+                "dvd": "2002-01-22T00:00:00.000+00:00"
+            },
+            "critic": {
+                "lastUpdated": "2015-09-01T18:10:09.000+00:00"
+            },
+            "rotten": 2,
+            "fresh": 11
+        }
+    },
+    {
+        "_id": "ObjectId('573a1391f29313caabd955510')",
+        "plot": "In the peaceful countryside, Vassily opposes the rich kulaks over the...",
+        "genres": [
+            "Drama"
+        ],
+        "runtime": 75,
+        "cast": [
+            "Stepan Shkurat",
+            "Semyon Svashenko",
+            "Yuliya Solntseva",
+            "Yelena Maksimova"
+        ],
+        "num_mflix_comments": 0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTYxMjQwNjY1NF5BMl5BanBnXkFtZT...",
+        "title": "Movie Title 9",
+        "fullplot": "Dovzhenko's 'film poem' style brings to life the collective experience...",
+        "countries": [
+            "Array"
+        ],
+        "released": "1930-10-17T00:00:00.000+00:00",
+        "directors": [
+            "Aleksandr Dovzhenko"
+        ],
+        "writers": [
+            "Aleksandr Dovzhenko"
+        ],
+        "awards": {
+            "wins": 1,
+            "nominations": 1,
+            "text": "1 win & 1 nomination."
+        },
+        "lastupdated": "2015-08-27 00:28:07.760000000",
+        "year": 1938,
+        "imdb": {
+            "rating": 7.5,
+            "votes": 3109,
+            "id": 21590
+        },
+        "type": "movie",
+        "tomatoes": {
+            "viewer": {
+                "dvd": "2002-01-22T00:00:00.000+00:00"
+            },
+            "critic": {
+                "lastUpdated": "2015-09-01T18:10:09.000+00:00"
+            },
+            "rotten": 2,
+            "fresh": 11
+        }
+    },
+    {
+        "_id": "ObjectId('573a1391f29313caabd955511')",
+        "plot": "In the peaceful countryside, Vassily opposes the rich kulaks over the...",
+        "genres": [
+            "Drama"
+        ],
+        "runtime": 75,
+        "cast": [
+            "Stepan Shkurat",
+            "Semyon Svashenko",
+            "Yuliya Solntseva",
+            "Yelena Maksimova"
+        ],
+        "num_mflix_comments": 0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTYxMjQwNjY1NF5BMl5BanBnXkFtZT...",
+        "title": "Movie Title 10",
+        "fullplot": "Dovzhenko's 'film poem' style brings to life the collective experience...",
+        "countries": [
+            "Array"
+        ],
+        "released": "1930-10-17T00:00:00.000+00:00",
+        "directors": [
+            "Aleksandr Dovzhenko"
+        ],
+        "writers": [
+            "Aleksandr Dovzhenko"
+        ],
+        "awards": {
+            "wins": 1,
+            "nominations": 1,
+            "text": "1 win & 1 nomination."
+        },
+        "lastupdated": "2015-08-27 00:28:07.760000000",
+        "year": 1939,
+        "imdb": {
+            "rating": 7.5,
+            "votes": 3109,
+            "id": 21590
+        },
+        "type": "movie",
+        "tomatoes": {
+            "viewer": {
+                "dvd": "2002-01-22T00:00:00.000+00:00"
+            },
+            "critic": {
+                "lastUpdated": "2015-09-01T18:10:09.000+00:00"
+            },
+            "rotten": 2,
+            "fresh": 11
+        }
+    },
+    {
+        "_id": "ObjectId('573a1391f29313caabd955512')",
+        "plot": "In the peaceful countryside, Vassily opposes the rich kulaks over the...",
+        "genres": [
+            "Drama"
+        ],
+        "runtime": 75,
+        "cast": [
+            "Stepan Shkurat",
+            "Semyon Svashenko",
+            "Yuliya Solntseva",
+            "Yelena Maksimova"
+        ],
+        "num_mflix_comments": 0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTYxMjQwNjY1NF5BMl5BanBnXkFtZT...",
+        "title": "Movie Title 11",
+        "fullplot": "Dovzhenko's 'film poem' style brings to life the collective experience...",
+        "countries": [
+            "Array"
+        ],
+        "released": "1930-10-17T00:00:00.000+00:00",
+        "directors": [
+            "Aleksandr Dovzhenko"
+        ],
+        "writers": [
+            "Aleksandr Dovzhenko"
+        ],
+        "awards": {
+            "wins": 1,
+            "nominations": 1,
+            "text": "1 win & 1 nomination."
+        },
+        "lastupdated": "2015-08-27 00:28:07.760000000",
+        "year": 1940,
+        "imdb": {
+            "rating": 7.5,
+            "votes": 3109,
+            "id": 21590
+        },
+        "type": "movie",
+        "tomatoes": {
+            "viewer": {
+                "dvd": "2002-01-22T00:00:00.000+00:00"
+            },
+            "critic": {
+                "lastUpdated": "2015-09-01T18:10:09.000+00:00"
+            },
+            "rotten": 2,
+            "fresh": 11
+        }
+    },
+    {
+        "_id": "ObjectId('573a1391f29313caabd955513')",
+        "plot": "In the peaceful countryside, Vassily opposes the rich kulaks over the...",
+        "genres": [
+            "Drama"
+        ],
+        "runtime": 75,
+        "cast": [
+            "Stepan Shkurat",
+            "Semyon Svashenko",
+            "Yuliya Solntseva",
+            "Yelena Maksimova"
+        ],
+        "num_mflix_comments": 0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTYxMjQwNjY1NF5BMl5BanBnXkFtZT...",
+        "title": "Movie Title 12",
+        "fullplot": "Dovzhenko's 'film poem' style brings to life the collective experience...",
+        "countries": [
+            "Array"
+        ],
+        "released": "1930-10-17T00:00:00.000+00:00",
+        "directors": [
+            "Aleksandr Dovzhenko"
+        ],
+        "writers": [
+            "Aleksandr Dovzhenko"
+        ],
+        "awards": {
+            "wins": 1,
+            "nominations": 1,
+            "text": "1 win & 1 nomination."
+        },
+        "lastupdated": "2015-08-27 00:28:07.760000000",
+        "year": 1941,
+        "imdb": {
+            "rating": 7.5,
+            "votes": 3109,
+            "id": 21590
+        },
+        "type": "movie",
+        "tomatoes": {
+            "viewer": {
+                "dvd": "2002-01-22T00:00:00.000+00:00"
+            },
+            "critic": {
+                "lastUpdated": "2015-09-01T18:10:09.000+00:00"
+            },
+            "rotten": 2,
+            "fresh": 11
+        }
+    },
+    {
+        "_id": "ObjectId('573a1391f29313caabd955514')",
+        "plot": "In the peaceful countryside, Vassily opposes the rich kulaks over the...",
+        "genres": [
+            "Drama"
+        ],
+        "runtime": 75,
+        "cast": [
+            "Stepan Shkurat",
+            "Semyon Svashenko",
+            "Yuliya Solntseva",
+            "Yelena Maksimova"
+        ],
+        "num_mflix_comments": 0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTYxMjQwNjY1NF5BMl5BanBnXkFtZT...",
+        "title": "Movie Title 13",
+        "fullplot": "Dovzhenko's 'film poem' style brings to life the collective experience...",
+        "countries": [
+            "Array"
+        ],
+        "released": "1930-10-17T00:00:00.000+00:00",
+        "directors": [
+            "Aleksandr Dovzhenko"
+        ],
+        "writers": [
+            "Aleksandr Dovzhenko"
+        ],
+        "awards": {
+            "wins": 1,
+            "nominations": 1,
+            "text": "1 win & 1 nomination."
+        },
+        "lastupdated": "2015-08-27 00:28:07.760000000",
+        "year": 1942,
+        "imdb": {
+            "rating": 7.5,
+            "votes": 3109,
+            "id": 21590
+        },
+        "type": "movie",
+        "tomatoes": {
+            "viewer": {
+                "dvd": "2002-01-22T00:00:00.000+00:00"
+            },
+            "critic": {
+                "lastUpdated": "2015-09-01T18:10:09.000+00:00"
+            },
+            "rotten": 2,
+            "fresh": 11
+        }
+    },
+    {
+        "_id": "ObjectId('573a1391f29313caabd955515')",
+        "plot": "In the peaceful countryside, Vassily opposes the rich kulaks over the...",
+        "genres": [
+            "Drama"
+        ],
+        "runtime": 75,
+        "cast": [
+            "Stepan Shkurat",
+            "Semyon Svashenko",
+            "Yuliya Solntseva",
+            "Yelena Maksimova"
+        ],
+        "num_mflix_comments": 0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTYxMjQwNjY1NF5BMl5BanBnXkFtZT...",
+        "title": "Movie Title 14",
+        "fullplot": "Dovzhenko's 'film poem' style brings to life the collective experience...",
+        "countries": [
+            "Array"
+        ],
+        "released": "1930-10-17T00:00:00.000+00:00",
+        "directors": [
+            "Aleksandr Dovzhenko"
+        ],
+        "writers": [
+            "Aleksandr Dovzhenko"
+        ],
+        "awards": {
+            "wins": 1,
+            "nominations": 1,
+            "text": "1 win & 1 nomination."
+        },
+        "lastupdated": "2015-08-27 00:28:07.760000000",
+        "year": 1943,
+        "imdb": {
+            "rating": 7.5,
+            "votes": 3109,
+            "id": 21590
+        },
+        "type": "movie",
+        "tomatoes": {
+            "viewer": {
+                "dvd": "2002-01-22T00:00:00.000+00:00"
+            },
+            "critic": {
+                "lastUpdated": "2015-09-01T18:10:09.000+00:00"
+            },
+            "rotten": 2,
+            "fresh": 11
+        }
+    },
+    {
+        "_id": "ObjectId('573a1391f29313caabd955516')",
+        "plot": "In the peaceful countryside, Vassily opposes the rich kulaks over the...",
+        "genres": [
+            "Drama"
+        ],
+        "runtime": 75,
+        "cast": [
+            "Stepan Shkurat",
+            "Semyon Svashenko",
+            "Yuliya Solntseva",
+            "Yelena Maksimova"
+        ],
+        "num_mflix_comments": 0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTYxMjQwNjY1NF5BMl5BanBnXkFtZT...",
+        "title": "Movie Title 15",
+        "fullplot": "Dovzhenko's 'film poem' style brings to life the collective experience...",
+        "countries": [
+            "Array"
+        ],
+        "released": "1930-10-17T00:00:00.000+00:00",
+        "directors": [
+            "Aleksandr Dovzhenko"
+        ],
+        "writers": [
+            "Aleksandr Dovzhenko"
+        ],
+        "awards": {
+            "wins": 1,
+            "nominations": 1,
+            "text": "1 win & 1 nomination."
+        },
+        "lastupdated": "2015-08-27 00:28:07.760000000",
+        "year": 1944,
+        "imdb": {
+            "rating": 7.5,
+            "votes": 3109,
+            "id": 21590
+        },
+        "type": "movie",
+        "tomatoes": {
+            "viewer": {
+                "dvd": "2002-01-22T00:00:00.000+00:00"
+            },
+            "critic": {
+                "lastUpdated": "2015-09-01T18:10:09.000+00:00"
+            },
+            "rotten": 2,
+            "fresh": 11
+        }
+    },
+    {
+        "_id": "ObjectId('573a1391f29313caabd955517')",
+        "plot": "In the peaceful countryside, Vassily opposes the rich kulaks over the...",
+        "genres": [
+            "Drama"
+        ],
+        "runtime": 75,
+        "cast": [
+            "Stepan Shkurat",
+            "Semyon Svashenko",
+            "Yuliya Solntseva",
+            "Yelena Maksimova"
+        ],
+        "num_mflix_comments": 0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTYxMjQwNjY1NF5BMl5BanBnXkFtZT...",
+        "title": "Movie Title 16",
+        "fullplot": "Dovzhenko's 'film poem' style brings to life the collective experience...",
+        "countries": [
+            "Array"
+        ],
+        "released": "1930-10-17T00:00:00.000+00:00",
+        "directors": [
+            "Aleksandr Dovzhenko"
+        ],
+        "writers": [
+            "Aleksandr Dovzhenko"
+        ],
+        "awards": {
+            "wins": 1,
+            "nominations": 1,
+            "text": "1 win & 1 nomination."
+        },
+        "lastupdated": "2015-08-27 00:28:07.760000000",
+        "year": 1945,
+        "imdb": {
+            "rating": 7.5,
+            "votes": 3109,
+            "id": 21590
+        },
+        "type": "movie",
+        "tomatoes": {
+            "viewer": {
+                "dvd": "2002-01-22T00:00:00.000+00:00"
+            },
+            "critic": {
+                "lastUpdated": "2015-09-01T18:10:09.000+00:00"
+            },
+            "rotten": 2,
+            "fresh": 11
+        }
+    },
+    {
+        "_id": "ObjectId('573a1391f29313caabd955518')",
+        "plot": "In the peaceful countryside, Vassily opposes the rich kulaks over the...",
+        "genres": [
+            "Drama"
+        ],
+        "runtime": 75,
+        "cast": [
+            "Stepan Shkurat",
+            "Semyon Svashenko",
+            "Yuliya Solntseva",
+            "Yelena Maksimova"
+        ],
+        "num_mflix_comments": 0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTYxMjQwNjY1NF5BMl5BanBnXkFtZT...",
+        "title": "Movie Title 17",
+        "fullplot": "Dovzhenko's 'film poem' style brings to life the collective experience...",
+        "countries": [
+            "Array"
+        ],
+        "released": "1930-10-17T00:00:00.000+00:00",
+        "directors": [
+            "Aleksandr Dovzhenko"
+        ],
+        "writers": [
+            "Aleksandr Dovzhenko"
+        ],
+        "awards": {
+            "wins": 1,
+            "nominations": 1,
+            "text": "1 win & 1 nomination."
+        },
+        "lastupdated": "2015-08-27 00:28:07.760000000",
+        "year": 1946,
+        "imdb": {
+            "rating": 7.5,
+            "votes": 3109,
+            "id": 21590
+        },
+        "type": "movie",
+        "tomatoes": {
+            "viewer": {
+                "dvd": "2002-01-22T00:00:00.000+00:00"
+            },
+            "critic": {
+                "lastUpdated": "2015-09-01T18:10:09.000+00:00"
+            },
+            "rotten": 2,
+            "fresh": 11
+        }
+    },
+    {
+        "_id": "ObjectId('573a1391f29313caabd955519')",
+        "plot": "In the peaceful countryside, Vassily opposes the rich kulaks over the...",
+        "genres": [
+            "Drama"
+        ],
+        "runtime": 75,
+        "cast": [
+            "Stepan Shkurat",
+            "Semyon Svashenko",
+            "Yuliya Solntseva",
+            "Yelena Maksimova"
+        ],
+        "num_mflix_comments": 0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTYxMjQwNjY1NF5BMl5BanBnXkFtZT...",
+        "title": "Movie Title 18",
+        "fullplot": "Dovzhenko's 'film poem' style brings to life the collective experience...",
+        "countries": [
+            "Array"
+        ],
+        "released": "1930-10-17T00:00:00.000+00:00",
+        "directors": [
+            "Aleksandr Dovzhenko"
+        ],
+        "writers": [
+            "Aleksandr Dovzhenko"
+        ],
+        "awards": {
+            "wins": 1,
+            "nominations": 1,
+            "text": "1 win & 1 nomination."
+        },
+        "lastupdated": "2015-08-27 00:28:07.760000000",
+        "year": 1947,
+        "imdb": {
+            "rating": 7.5,
+            "votes": 3109,
+            "id": 21590
+        },
+        "type": "movie",
+        "tomatoes": {
+            "viewer": {
+                "dvd": "2002-01-22T00:00:00.000+00:00"
+            },
+            "critic": {
+                "lastUpdated": "2015-09-01T18:10:09.000+00:00"
+            },
+            "rotten": 2,
+            "fresh": 11
+        }
+    },
+    {
+        "_id": "ObjectId('573a1391f29313caabd955520')",
+        "plot": "In the peaceful countryside, Vassily opposes the rich kulaks over the...",
+        "genres": [
+            "Drama"
+        ],
+        "runtime": 75,
+        "cast": [
+            "Stepan Shkurat",
+            "Semyon Svashenko",
+            "Yuliya Solntseva",
+            "Yelena Maksimova"
+        ],
+        "num_mflix_comments": 0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTYxMjQwNjY1NF5BMl5BanBnXkFtZT...",
+        "title": "Movie Title 19",
+        "fullplot": "Dovzhenko's 'film poem' style brings to life the collective experience...",
+        "countries": [
+            "Array"
+        ],
+        "released": "1930-10-17T00:00:00.000+00:00",
+        "directors": [
+            "Aleksandr Dovzhenko"
+        ],
+        "writers": [
+            "Aleksandr Dovzhenko"
+        ],
+        "awards": {
+            "wins": 1,
+            "nominations": 1,
+            "text": "1 win & 1 nomination."
+        },
+        "lastupdated": "2015-08-27 00:28:07.760000000",
+        "year": 1948,
+        "imdb": {
+            "rating": 7.5,
+            "votes": 3109,
+            "id": 21590
+        },
+        "type": "movie",
+        "tomatoes": {
+            "viewer": {
+                "dvd": "2002-01-22T00:00:00.000+00:00"
+            },
+            "critic": {
+                "lastUpdated": "2015-09-01T18:10:09.000+00:00"
+            },
+            "rotten": 2,
+            "fresh": 11
+        }
+    },
+    {
+        "_id": "ObjectId('573a1391f29313caabd955521')",
+        "plot": "In the peaceful countryside, Vassily opposes the rich kulaks over the...",
+        "genres": [
+            "Drama"
+        ],
+        "runtime": 75,
+        "cast": [
+            "Stepan Shkurat",
+            "Semyon Svashenko",
+            "Yuliya Solntseva",
+            "Yelena Maksimova"
+        ],
+        "num_mflix_comments": 0,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTYxMjQwNjY1NF5BMl5BanBnXkFtZT...",
+        "title": "Movie Title 20",
+        "fullplot": "Dovzhenko's 'film poem' style brings to life the collective experience...",
+        "countries": [
+            "Array"
+        ],
+        "released": "1930-10-17T00:00:00.000+00:00",
+        "directors": [
+            "Aleksandr Dovzhenko"
+        ],
+        "writers": [
+            "Aleksandr Dovzhenko"
+        ],
+        "awards": {
+            "wins": 1,
+            "nominations": 1,
+            "text": "1 win & 1 nomination."
+        },
+        "lastupdated": "2015-08-27 00:28:07.760000000",
+        "year": 1949,
+        "imdb": {
+            "rating": 7.5,
+            "votes": 3109,
+            "id": 21590
+        },
+        "type": "movie",
+        "tomatoes": {
+            "viewer": {
+                "dvd": "2002-01-22T00:00:00.000+00:00"
+            },
+            "critic": {
+                "lastUpdated": "2015-09-01T18:10:09.000+00:00"
+            },
+            "rotten": 2,
+            "fresh": 11
+        }
+    }
+]
