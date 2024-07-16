@@ -1,22 +1,8 @@
 const HttpError = require("../models/http-error");
 const User = require("../models/user");
-const Artist = require("../models/artist");
-const Album = require("../models/album");
-const Track = require("../models/track");
 
-const getUsers = async (req, res, next) => {
-  let users;
-  try {
-    users = await User.find({}, "-password");
-  } catch (err) {
-    const error = new HttpError(
-      "Fetching users failed, please try again later.",
-      500
-    );
-    return next(error);
-  }
-  res.json({ users: users.map((user) => user.toObject({ getters: true })) });
-};
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 const signup = async (req, res, next) => {
   const { name, email, password } = req.body;
@@ -40,12 +26,23 @@ const signup = async (req, res, next) => {
     return next(error);
   }
 
+  let hashedPassword;
+  try {
+    hashedPassword = await bcrypt.hash(password, 12);
+  } catch (err) {
+    const error = new HttpError(
+      "Could not create user, please try again.",
+      500
+    );
+    return next(error);
+  }
+
   const createdUser = new User({
     name,
     email,
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9Aw33_HdEdT0PcQo4owwBJdS92nEhfKrRmA&s",
-    password,
+    password: hashedPassword,
   });
 
   try {
@@ -55,7 +52,24 @@ const signup = async (req, res, next) => {
     return next(error);
   }
 
-  res.status(201).json({ user: createdUser.toObject({ getters: true }) });
+  let token;
+  try {
+    token = jwt.sign(
+      { userId: createdUser.id, email: createdUser.email },
+      "supersecret_dont_share",
+      { expiresIn: "1h" }
+    );
+  } catch (err) {
+    const error = new HttpError(
+      "Signing up failed, please try again later.",
+      500
+    );
+    return next(error);
+  }
+
+  res
+    .status(201)
+    .json({ userId: createdUser.id, email: createdUser.email, token: token });
 };
 
 const login = async (req, res, next) => {
@@ -66,6 +80,38 @@ const login = async (req, res, next) => {
   try {
     existingUser = await User.findOne({ email: email });
   } catch (err) {
+    const error = new HttpError("I_am_the_king_of_the_world", 500);
+    return next(error);
+  }
+
+  if (!existingUser) {
+    const error = new HttpError("This email is not registered yet.", 401);
+    return next(error);
+  }
+
+  let isValidPassword = false;
+  try {
+    isValidPassword = await bcrypt.compare(password, existingUser.password);
+  } catch (err) {
+    const error = new HttpError("Server side error (bcrypt).", 500);
+    return next(error);
+  }
+  if (!isValidPassword) {
+    const error = new HttpError(
+      "the password you input is incorrect, please check you email or password.",
+      403
+    );
+    return next(error);
+  }
+
+  let token;
+  try {
+    token = jwt.sign(
+      { userId: existingUser.id, email: existingUser.email },
+      "I_am_the_king_of_the_world",
+      { expiresIn: "1h" }
+    );
+  } catch (err) {
     const error = new HttpError(
       "Logging in failed, please try again later.",
       500
@@ -73,105 +119,12 @@ const login = async (req, res, next) => {
     return next(error);
   }
 
-  if (!existingUser || existingUser.password !== password) {
-    const error = new HttpError(
-      "Invalid credentials, could not log you in.",
-      401
-    );
-    return next(error);
-  }
-
-  res.json({ message: "Logged in!" });
+  res.json({
+    userId: existingUser.id,
+    email: existingUser.email,
+    token: token,
+  });
 };
 
-const addLikedArtist = async (req, res, next) => {
-  const { userId, artistId } = req.body;
-
-  try {
-    const user = await User.findById(userId);
-    if (!user) {
-      const error = new HttpError("User not found", 404);
-      return next(error);
-    }
-
-    const artist = await Artist.findById(artistId);
-    if (!artist) {
-      const error = new HttpError("Artist not found", 404);
-      return next(error);
-    }
-
-    if (!user.likedArtists.includes(artistId)) {
-      user.likedArtists.push(artistId);
-      await user.save();
-    }
-    res.status(200).json(user);
-  } catch (error) {
-    const err = new HttpError("Adding liked artist failed", 500);
-    return next(err);
-  }
-};
-
-const addLikedAlbum = async (req, res, next) => {
-  const { userId, albumId } = req.body;
-
-  try {
-    const user = await User.findById(userId);
-    if (!user) {
-      const error = new HttpError("User not found", 404);
-      return next(error);
-    }
-
-    const album = await Album.findById(albumId);
-    if (!album) {
-      const error = new HttpError("Album not found", 404);
-      return next(error);
-    }
-
-    if (!user.likedAlbums.includes(albumId)) {
-      user.likedAlbums.push(albumId);
-      await user.save();
-    }
-
-    res.status(200).json(user);
-  } catch (error) {
-    const err = new HttpError("Adding liked album failed", 500);
-    return next(err);
-  }
-};
-
-const addLikedTrack = async (req, res, next) => {
-  const { userId, trackId } = req.body;
-
-  try {
-    const user = await User.findById(userId);
-    if (!user) {
-      const error = new HttpError("User not found", 404);
-      return next(error);
-    }
-
-    const track = await Track.findById(trackId);
-    if (!track) {
-      const error = new HttpError("Track not found", 404);
-      return next(error);
-    }
-
-    if (!user.likedTracks.includes(trackId)) {
-      user.likedTracks.push(trackId);
-      await user.save();
-    }
-
-    res
-      .status(200)
-      .json({ message: "Track added to liked tracks", user: user });
-  } catch (error) {
-    const err = new HttpError(error.message, 500);
-    return next(err);
-  }
-};
-
-exports.getUsers = getUsers;
 exports.signup = signup;
 exports.login = login;
-exports.addLikedArtist = addLikedArtist;
-exports.addLikedAlbum = addLikedAlbum;
-exports.addLikedTrack = addLikedTrack;

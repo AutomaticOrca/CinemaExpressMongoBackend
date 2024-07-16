@@ -1,27 +1,25 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema(
+const cinemaSchema = new Schema(
   {
     name: {
       type: String,
       required: true,
       trim: true,
     },
-    email: {
+    address: {
       type: String,
       required: true,
-      unique: true,
       trim: true,
-      lowercase: true,
     },
-    password: {
-      type: String,
+    lat: {
+      type: Number,
       required: true,
     },
-    createdAt: {
-      type: Date,
-      default: Date.now,
+    lng: {
+      type: Number,
+      required: true,
     },
   },
   {
@@ -29,6 +27,6 @@ const userSchema = new Schema(
   }
 );
 
-const User = mongoose.model("User", userSchema);
+const Cinema = mongoose.model("Cinema", cinemaSchema);
 
-module.exports = User;
+module.exports = Cinema;
