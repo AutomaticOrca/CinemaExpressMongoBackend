@@ -1,18 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import NavLink from "../UIElements/NavLink";
+
+import { AuthContext } from "../../shared/context/auth-context";
+
+import NavLink from "../components/Navigation/NavLinks";
 
 const CommonLayout = ({ children }) => {
+  const auth = useContext(AuthContext);
+
   return (
     <div className="bg-creamy min-h-screen flex flex-col">
       <header>
         <div className="bg-ritzHeaderPink flex justify-end">
-          <Link to="/" className="mr-4">
-            Register
-          </Link>
-          <Link to="/" className="mr-4">
-            Sign In
-          </Link>
+          {!auth.isLoggedIn ? (
+            <Link to="/auth" className="mr-4">
+              SIGN IN
+            </Link>
+          ) : (
+            <Link to="/user-profile" className="mr-4">
+              MY
+            </Link>
+          )}
         </div>
         <nav className="flex justify-between items-center m-2 p-4">
           <NavLink to="/" title="Now Showing" />
