@@ -5,8 +5,12 @@ const mongoose = require("mongoose");
 const HttpError = require("./models/http-error");
 
 const usersRoutes = require("./routes/users-routes");
+const moviesRoutes = require("./routes/movies-routes");
+const sessionsRoutes = require("./routes/sesssions-routes");
+const cinemasRoutes = require("./routes/cinemas-routes");
 
 const app = express();
+
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
@@ -21,6 +25,9 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/users", usersRoutes);
+app.use("/api/movies", moviesRoutes);
+app.use("/api/sessions", sessionsRoutes);
+app.use("/api/cinemas", cinemasRoutes);
 
 app.use((req, res, next) => {
   const error = new HttpError("Could not find this route", 404);
