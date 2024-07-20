@@ -10,6 +10,7 @@ import CommonLayout from "./shared/layouts/CommonLayout";
 import Home from "./shared/pages/Home";
 import Auth from "./user/pages/Auth";
 import UserProfile from "./user/pages/UserProfile";
+import NowShowingPage from "./showtimes/pages/NowShowingPage";
 import CinemaPage from "./cinema/pages/CinemaPage";
 
 const App = () => {
@@ -38,6 +39,7 @@ const App = () => {
               path="/user-profile"
               element={<ProtectedRoute element={UserProfile} />}
             />
+            <Route path="/nowshowing" element={<NowShowingPage />} />
             <Route path="/cinemas" element={<CinemaPage />} />
           </Routes>
         </CommonLayout>

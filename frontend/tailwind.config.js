@@ -18,6 +18,7 @@ export default {
       fontFamily: {
         playwrite: ["Playwrite HR", "sans-serif"],
         raleway: ["Raleway", "sans-serif"],
+        italiana: ["Italiana", "sans-serif"],
       },
       width: {
         "thin-line": "0.01rem",

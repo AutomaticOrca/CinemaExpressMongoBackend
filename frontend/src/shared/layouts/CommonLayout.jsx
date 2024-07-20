@@ -22,8 +22,8 @@ const CommonLayout = ({ children }) => {
             </Link>
           )}
         </div>
-        <nav className="flex justify-between items-center m-2 p-4">
-          <NavLink to="/" title="Now Showing" />
+        <nav className="flex justify-between items-center m-2 p-4  mx-auto max-w-screen-2xl">
+          <NavLink to="/nowshowing" title="Now Showing" />
           <NavLink to="/" title="Coming Soon" />
           <NavLink to="/cinemas" title="Cinemas" />
           <Link
@@ -38,7 +38,9 @@ const CommonLayout = ({ children }) => {
         </nav>
         <div className="border-t-4 border-ritzHeaderPink"></div>
       </header>
-      <main className="flex-grow pt-16 p-4">{children}</main>
+      <main className="flex-grow pt-10 p-4 mx-auto max-w-screen-xl">
+        {children}
+      </main>
       <footer className="bg-ritzBgBlue text-white p-4 text-center mt-auto">
         &copy; Copyright 2024 Cinema Paradiso
       </footer>
