@@ -10,6 +10,7 @@ import CommonLayout from "./shared/layouts/CommonLayout";
 import Home from "./shared/pages/Home";
 import Auth from "./user/pages/Auth";
 import UserProfile from "./user/pages/UserProfile";
+import CinemaPage from "./cinema/pages/CinemaPage";
 
 const App = () => {
   const { token, login, logout, userId } = useAuth();
@@ -37,6 +38,7 @@ const App = () => {
               path="/user-profile"
               element={<ProtectedRoute element={UserProfile} />}
             />
+            <Route path="/cinemas" element={<CinemaPage />} />
           </Routes>
         </CommonLayout>
       </Router>

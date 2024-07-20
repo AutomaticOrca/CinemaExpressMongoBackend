@@ -13,10 +13,14 @@ export default {
         paradisoOrange: "#e5543c",
         warmGold: "#B76E79",
         midnightBlue: "#2C3E50",
+        golenAgeBlack: "#252021",
       },
       fontFamily: {
         playwrite: ["Playwrite HR", "sans-serif"],
         raleway: ["Raleway", "sans-serif"],
+      },
+      width: {
+        "thin-line": "0.01rem",
       },
     },
   },

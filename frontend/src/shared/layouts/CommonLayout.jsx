@@ -25,7 +25,7 @@ const CommonLayout = ({ children }) => {
         <nav className="flex justify-between items-center m-2 p-4">
           <NavLink to="/" title="Now Showing" />
           <NavLink to="/" title="Coming Soon" />
-          <NavLink to="/" title="Theatres" />
+          <NavLink to="/cinemas" title="Cinemas" />
           <Link
             to="/"
             className="mr-4 font-playwrite text-3xl transition-colors duration-300 hover:text-warmGold px-2 py-1 rounded"
