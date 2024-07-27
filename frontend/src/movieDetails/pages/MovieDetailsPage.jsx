@@ -1,5 +1,5 @@
 import { useEffect, useState, Fragment } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import {
   fetchSessionById,
   fetchMovieById,
@@ -21,6 +21,12 @@ function MovieDetailsPage() {
   const [cinema, setCinema] = useState();
   const [error, setError] = useState("");
   const [isLoading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  const handleClickBookTickets = () => {
+    console.log("aaa");
+    navigate(`/purchase/${sessionid}`);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -119,7 +125,9 @@ function MovieDetailsPage() {
         </p>
         <p>{cinema.name}</p>
         <div className="my-2 flex flex-row">
-          <Button className="mx-2">Book Tickets</Button>
+          <Button className="mx-2" onClick={handleClickBookTickets}>
+            Book Tickets
+          </Button>
           <Button className="mx-2">Add to Watchlist</Button>
         </div>
       </div>
