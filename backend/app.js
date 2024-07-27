@@ -8,6 +8,7 @@ const usersRoutes = require("./routes/users-routes");
 const moviesRoutes = require("./routes/movies-routes");
 const sessionsRoutes = require("./routes/sesssions-routes");
 const cinemasRoutes = require("./routes/cinemas-routes");
+const purchasesRoutes = require("./routes/purchases-routes");
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use("/api/users", usersRoutes);
 app.use("/api/movies", moviesRoutes);
 app.use("/api/sessions", sessionsRoutes);
 app.use("/api/cinemas", cinemasRoutes);
+app.use("/api/purchases", purchasesRoutes);
 
 app.use((req, res, next) => {
   const error = new HttpError("Could not find this route", 404);
