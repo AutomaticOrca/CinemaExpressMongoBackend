@@ -12,6 +12,7 @@ import Auth from "./user/pages/Auth";
 import UserProfile from "./user/pages/UserProfile";
 import NowShowingPage from "./showtimes/pages/NowShowingPage";
 import CinemaPage from "./cinema/pages/CinemaPage";
+import MovieDetailsPage from "./movieDetails/pages/MovieDetailsPage";
 
 const App = () => {
   const { token, login, logout, userId } = useAuth();
@@ -41,6 +42,7 @@ const App = () => {
             />
             <Route path="/nowshowing" element={<NowShowingPage />} />
             <Route path="/cinemas" element={<CinemaPage />} />
+            <Route path="/session/:sessionid" element={<MovieDetailsPage />} />
           </Routes>
         </CommonLayout>
       </Router>

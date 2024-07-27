@@ -1,47 +1,44 @@
 import { Fragment, useState, useEffect } from "react";
-import axios from "axios";
-import API_URL from "../../shared/util/apiConfig";
 
-const LoadingMessage = () => {
-  return <p>Loading</p>;
-};
-function SessionCard({ session }) {
+import { fetchMovieById, fetchCinemaById } from "../../shared/util/api";
+import LoadingSpinner from "../../shared/UIElements/LoadingSpinner";
+import NowShowingCard from "./NowShowingCard";
+
+function SessionCard({ session, endpoint }) {
   const { movieId, cinemaId, date, time, price, id } = session;
   const [movie, setMovie] = useState();
   const [cinema, setCinema] = useState();
   const [error, setError] = useState("");
   const [isLoading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchMovieById = async () => {
-      try {
-        const response = await axios.get(`${API_URL}/movies/${movieId}`);
-        setMovie(response.data.movie);
-      } catch (err) {
-        setError("fetchMovieById failed");
-      }
-    };
+  const containerClass =
+    endpoint === "nowshowing" ? "w-full " : "w-full md:w-1/2 lg:w-1/3";
 
-    const fetchCinemaById = async () => {
-      try {
-        const response = await axios.get(`${API_URL}/cinemas/${cinemaId}`);
-        setCinema(response.data.cinema);
-      } catch (err) {
-        setError("fetchCinemaById failed");
-      }
-    };
+  useEffect(() => {
     const fetchData = async () => {
-      await fetchMovieById();
-      await fetchCinemaById();
-      setLoading(false);
+      try {
+        const movieData = await fetchMovieById(movieId);
+        setMovie(movieData);
+        const cinemaData = await fetchCinemaById(cinemaId);
+        setCinema(cinemaData);
+        setLoading(false);
+      } catch (err) {
+        setError(err.message);
+      }
     };
 
     fetchData();
-  }, []);
+  }, [movieId, cinemaId]);
 
   return (
-    <div className="bg-white border border-gray-300 rounded-lg shadow-sm overflow-hidden">
-      {isLoading ? <LoadingMessage /> : <p>{movie.title}</p>}
+    <div
+      className={`bg-white border border-gray-300 rounded-lg shadow-sm overflow-hidden ${containerClass}`}
+    >
+      {isLoading ? (
+        <LoadingSpinner />
+      ) : (
+        <NowShowingCard movieData={movie} cinemaData={cinema} />
+      )}
     </div>
   );
 }

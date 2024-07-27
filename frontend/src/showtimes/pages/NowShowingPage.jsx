@@ -2,7 +2,8 @@ import { Fragment, useState, useEffect } from "react";
 import axios from "axios";
 import API_URL from "../../shared/util/apiConfig";
 
-import SessionCard from "../components/SessionCard";
+import NowShowingCard from "../components/NowShowingCard";
+
 function NowShowingPage() {
   const [sessions, setSessions] = useState([]);
   const [error, setError] = useState("");
@@ -18,6 +19,7 @@ function NowShowingPage() {
     };
 
     fetchSessions();
+    console.log(sessions);
   }, []);
 
   return (
@@ -25,9 +27,14 @@ function NowShowingPage() {
       <h1 className="font-italiana text-4xl px-4 font-bold text-center ">
         NOW SHOWING
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1">
         {sessions.map((session, index) => (
-          <SessionCard key={index} session={session} />
+          <Fragment key={index}>
+            <NowShowingCard sessionData={session} />
+            {index !== sessions.length - 1 && (
+              <hr className="my-4 border-t border-ritzBgBlue" />
+            )}
+          </Fragment>
         ))}
       </div>
     </Fragment>
