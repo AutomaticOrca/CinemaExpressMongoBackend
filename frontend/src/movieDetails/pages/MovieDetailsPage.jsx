@@ -24,7 +24,6 @@ function MovieDetailsPage() {
   const navigate = useNavigate();
 
   const handleClickBookTickets = () => {
-    console.log("aaa");
     navigate(`/purchase/${sessionid}`);
   };
 

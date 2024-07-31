@@ -1,12 +1,32 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../shared/context/auth-context";
+import ProgressStepper from "../../shared/components/UIElements/ProgressStepper";
+import TicketSelection from "../components/TicketsSelection";
+import Cart from "../components/Cart";
+import PaymentForm from "../components/PaymentForm";
 import Button from "../../shared/components/UIElements/Button";
+import SuccessPurchased from "../components/SuccessPurchased";
 
 function PurchasePage() {
   const [countdown, setCountdown] = useState(5);
   const { isLoggedIn } = useContext(AuthContext);
+  const steps = ["Tickets", "Cart", "Payment", "Success"];
+  const [currentStep, setCurrentStep] = useState(0);
+  const [isNextDisabled, setIsNextDisabled] = useState(true);
   const navigate = useNavigate();
+
+  const handleStepClick = (index) => {
+    setCurrentStep(index);
+  };
+
+  const handleNextButton = () => {
+    setCurrentStep(currentStep + 1);
+  };
+
+  const updateNextButtonStatus = (status) => {
+    setIsNextDisabled(!status);
+  };
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -34,7 +54,34 @@ function PurchasePage() {
       </>
     );
   }
-  return <div>purchase page</div>;
+  return (
+    <div>
+      <ProgressStepper
+        steps={steps}
+        currentStep={currentStep}
+        onStepClick={handleStepClick}
+      />
+      <div className="mt-8">
+        {currentStep === 0 && (
+          <TicketSelection updateNextButtonStatus={updateNextButtonStatus} />
+        )}
+        {currentStep === 1 && <Cart />}
+        {currentStep === 2 && (
+          <PaymentForm updateNextButtonStatus={updateNextButtonStatus} />
+        )}
+        {currentStep === 4 && <SuccessPurchased />}
+        {currentStep < steps.length - 1 && (
+          <Button
+            onClick={handleNextButton}
+            className="mt-4"
+            disabled={isNextDisabled}
+          >
+            Next
+          </Button>
+        )}
+      </div>
+    </div>
+  );
 }
 
 export default PurchasePage;
