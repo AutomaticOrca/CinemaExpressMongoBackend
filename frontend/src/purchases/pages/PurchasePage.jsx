@@ -1,8 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../shared/context/auth-context";
+import Menu from "../components/Menu";
 import ProgressStepper from "../../shared/components/UIElements/ProgressStepper";
-import TicketSelection from "../components/TicketsSelection";
+import TicketMenu from "../components/TicketsMenu";
 import Cart from "../components/Cart";
 import PaymentForm from "../components/PaymentForm";
 import Button from "../../shared/components/UIElements/Button";
@@ -11,22 +12,22 @@ import SuccessPurchased from "../components/SuccessPurchased";
 function PurchasePage() {
   const [countdown, setCountdown] = useState(5);
   const { isLoggedIn } = useContext(AuthContext);
-  const steps = ["Tickets", "Cart", "Payment", "Success"];
-  const [currentStep, setCurrentStep] = useState(0);
-  const [isNextDisabled, setIsNextDisabled] = useState(true);
   const navigate = useNavigate();
+  // const steps = ["Tickets", "Cart", "Payment", "Success"];
+  // const [currentStep, setCurrentStep] = useState(0);
+  // const [isNextDisabled, setIsNextDisabled] = useState(true);
 
-  const handleStepClick = (index) => {
-    setCurrentStep(index);
-  };
+  // const handleStepClick = (index) => {
+  //   setCurrentStep(index);
+  // };
 
-  const handleNextButton = () => {
-    setCurrentStep(currentStep + 1);
-  };
+  // const handleNextButton = () => {
+  //   setCurrentStep(currentStep + 1);
+  // };
 
-  const updateNextButtonStatus = (status) => {
-    setIsNextDisabled(!status);
-  };
+  // const updateNextButtonStatus = (status) => {
+  //   setIsNextDisabled(!status);
+  // };
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -56,14 +57,15 @@ function PurchasePage() {
   }
   return (
     <div>
-      <ProgressStepper
+      <Menu />
+      {/* <ProgressStepper
         steps={steps}
         currentStep={currentStep}
         onStepClick={handleStepClick}
       />
       <div className="mt-8">
         {currentStep === 0 && (
-          <TicketSelection updateNextButtonStatus={updateNextButtonStatus} />
+          <TicketMenu updateNextButtonStatus={updateNextButtonStatus} />
         )}
         {currentStep === 1 && <Cart />}
         {currentStep === 2 && (
@@ -79,7 +81,7 @@ function PurchasePage() {
             Next
           </Button>
         )}
-      </div>
+      </div> */}
     </div>
   );
 }

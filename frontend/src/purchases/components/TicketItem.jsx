@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const TicketChooseCard = ({ type, price, onAddTicket }) => {
+const TicketItem = ({ type, price, onAddTicket }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const TicketChooseCard = ({ type, price, onAddTicket }) => {
     <div className="flex justify-between items-center py-2">
       <div>
         <h2 className="text-xl font-bold text-red-500">{type}</h2>
-        <p className="text-lg text-white">${price.toFixed(2)}</p>
+        <p className="text-lg">${price}0</p>
       </div>
       <div className="flex items-center">
         <div className="flex items-center border border-gray-300 rounded overflow-hidden">
@@ -42,4 +42,4 @@ const TicketChooseCard = ({ type, price, onAddTicket }) => {
   );
 };
 
-export default TicketChooseCard;
+export default TicketItem;
