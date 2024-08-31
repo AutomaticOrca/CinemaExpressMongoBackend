@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import TicketChooseCard from "./TicketChooseCard";
+import TicketItem from "./TicketItem";
 
-const TicketSelection = ({ updateNextButtonStatus }) => {
+const TicketMenu = ({ updateNextButtonStatus }) => {
   const ticketTypes = [
     { type: "ADULT", price: 24.5 },
     { type: "CHILD", price: 15.5 },
     { type: "SENIOR", price: 16.5 },
     { type: "CONCESSION", price: 19.5 },
-    { type: "PENSION", price: 16.0 },
-    { type: "STUDENT", price: 8.0 },
+    { type: "PENSION", price: 16.5 },
+    { type: "STUDENT", price: 19.5 },
   ];
 
   const [ticketCounts, setTicketCounts] = useState(
@@ -41,9 +41,9 @@ const TicketSelection = ({ updateNextButtonStatus }) => {
   }, [ticketCounts, updateNextButtonStatus]);
 
   return (
-    <div className="p-6 text-white">
+    <div className="p-6">
       {ticketTypes.map((ticket) => (
-        <TicketChooseCard
+        <TicketItem
           key={ticket.type}
           type={ticket.type}
           price={ticket.price}
@@ -82,4 +82,4 @@ const TicketSelection = ({ updateNextButtonStatus }) => {
   );
 };
 
-export default TicketSelection;
+export default TicketMenu;
