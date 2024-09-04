@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 const HttpError = require("./models/http-error");
 
@@ -13,7 +14,13 @@ const purchasesRoutes = require("./routes/purchases-routes");
 const app = express();
 
 app.use(bodyParser.json());
-
+app.use(
+  cors({
+    origin: "*",
+    methods: "GET,POST,PATCH,DELETE",
+    allowedHeaders: "Content-Type,Authorization",
+  })
+);
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
