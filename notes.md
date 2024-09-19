@@ -8,7 +8,7 @@
 
 `left-1/2`: 将元素的左边设置为父元素宽度的一半。
 
-`w-0`: 初始宽度设置为0。
+`w-0`: 初始宽度设置为 0。
 
 `h-0.5`: 设置元素的高度。
 
@@ -16,13 +16,10 @@
 
 `transition-all`: 启用所有属性的过渡效果。
 
-`duration-300`: 设置过渡效果的持续时间为300ms。
+`duration-300`: 设置过渡效果的持续时间为 300ms。
 
 `group-hover:w-full`: 在悬停状态下，宽度变为全宽。
 
 `group-hover:left-0`: 在悬停状态下，左边缘对齐父元素的左边缘。
 
-
-
-
-
+https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/configuring-the-self-hosted-runner-application-as-a-service
