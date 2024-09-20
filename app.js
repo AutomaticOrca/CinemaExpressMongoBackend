@@ -57,7 +57,8 @@ mongoose
   )
   .then(() => {
     console.log("connect to mongo");
-    app.listen(5005);
+    app.listen(5005, "0.0.0.0");
+    console.log("listen to 5005");
   })
   .catch((error) => {
     console.log(error);
