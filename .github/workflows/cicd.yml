@@ -27,4 +27,4 @@ jobs:
       - name: Delete old container
         run: docker rm -f cinema-backend-container
       - name: Run Docker Container
-        run: docker run -d -p 4000:4000 --name cinema-backend-container -e MONGO_PASSWORD='${{ secrets.MONGO_PASSWORD }}' automaticorca/cinema-backend
+        run: docker run -d -p 5005:5005 --name cinema-backend-container -e MONGO_PASSWORD='${{ secrets.MONGO_PASSWORD }}' automaticorca/cinema-backend
