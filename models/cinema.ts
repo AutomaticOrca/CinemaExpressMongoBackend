@@ -1,7 +1,13 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+import { Schema, model, Document } from "mongoose";
 
-const cinemaSchema = new Schema(
+interface ICinema extends Document {
+  name: string;
+  address: string;
+  lat: number;
+  lng: number;
+}
+
+const cinemaSchema = new Schema<ICinema>(
   {
     name: {
       type: String,
@@ -27,6 +33,6 @@ const cinemaSchema = new Schema(
   }
 );
 
-const Cinema = mongoose.model("Cinema", cinemaSchema);
+const Cinema = model<ICinema>("Cinema", cinemaSchema);
 
-module.exports = Cinema;
+export default Cinema;

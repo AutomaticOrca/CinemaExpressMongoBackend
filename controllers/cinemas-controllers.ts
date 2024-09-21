@@ -1,7 +1,12 @@
-const HttpError = require("../models/http-error");
-const Cinema = require("../models/cinema");
+import { Request, Response, NextFunction } from "express";
+import HttpError from "../models/http-error";
+import Cinema from "../models/cinema";
 
-const getAllCinemas = async (req, res, next) => {
+export const getAllCinemas = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   let cinemas;
   try {
     cinemas = await Cinema.find();
@@ -14,7 +19,11 @@ const getAllCinemas = async (req, res, next) => {
   });
 };
 
-const getCinemaById = async (req, res, next) => {
+export const getCinemaById = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   const cinemaId = req.params.cid;
 
   let cinema;
@@ -34,6 +43,3 @@ const getCinemaById = async (req, res, next) => {
   }
   res.json({ cinema: cinema.toObject({ getters: true }) });
 };
-
-exports.getAllCinemas = getAllCinemas;
-exports.getCinemaById = getCinemaById;
