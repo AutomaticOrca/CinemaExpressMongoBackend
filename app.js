@@ -7,7 +7,7 @@ const HttpError = require("./models/http-error");
 
 const usersRoutes = require("./routes/users-routes");
 const moviesRoutes = require("./routes/movies-routes");
-const sessionsRoutes = require("./routes/sesssions-routes");
+const sessionsRoutes = require("./routes/sessions-routes");
 const cinemasRoutes = require("./routes/cinemas-routes");
 const purchasesRoutes = require("./routes/purchases-routes");
 
@@ -21,16 +21,6 @@ app.use(
     allowedHeaders: "Content-Type,Authorization",
   })
 );
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE");
-
-  next();
-});
 
 app.use("/api/users", usersRoutes);
 app.use("/api/movies", moviesRoutes);
