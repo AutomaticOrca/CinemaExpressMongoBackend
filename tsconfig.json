@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "strict": true,
+    "outDir": "./dist", // 输出到 dist 目录
+    "esModuleInterop": true,
+    "allowJs": true, // 允许同时编译 .js 文件
+    "checkJs": false, // 不检查 .js 文件的类型
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": ["./**/*.ts", "./**/*.js"], // 包括所有 ts 和 js 文件
+  "exclude": ["node_modules", "dist"] // 排除 node_modules 和 dist 文件夹
+}

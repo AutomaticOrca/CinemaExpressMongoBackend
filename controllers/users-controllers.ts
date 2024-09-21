@@ -1,15 +1,24 @@
-const HttpError = require("../models/http-error");
-const User = require("../models/user");
+import { Request, Response, NextFunction } from "express";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+import HttpError from "../models/http-error";
+import User from "../models/user";
 
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+interface JwtPayload {
+  userId: string;
+  email: string;
+}
 
-const signup = async (req, res, next) => {
+export const signup = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   const { name, email, password } = req.body;
 
   let existingUser;
   try {
-    existingUser = await User.findOne({ email: email });
+    existingUser = await User.findOne({ email });
   } catch (err) {
     const error = new HttpError(
       "Signing up failed, please try again later.",
@@ -69,16 +78,19 @@ const signup = async (req, res, next) => {
 
   res
     .status(201)
-    .json({ userId: createdUser.id, email: createdUser.email, token: token });
+    .json({ userId: createdUser.id, email: createdUser.email, token });
 };
 
-const login = async (req, res, next) => {
+export const login = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   const { email, password } = req.body;
 
   let existingUser;
-
   try {
-    existingUser = await User.findOne({ email: email });
+    existingUser = await User.findOne({ email });
   } catch (err) {
     const error = new HttpError("I_am_the_king_of_the_world", 500);
     return next(error);
@@ -96,9 +108,10 @@ const login = async (req, res, next) => {
     const error = new HttpError("Server side error (bcrypt).", 500);
     return next(error);
   }
+
   if (!isValidPassword) {
     const error = new HttpError(
-      "the password you input is incorrect, please check you email or password.",
+      "The password you input is incorrect, please check your email or password.",
       403
     );
     return next(error);
@@ -119,12 +132,5 @@ const login = async (req, res, next) => {
     return next(error);
   }
 
-  res.json({
-    userId: existingUser.id,
-    email: existingUser.email,
-    token: token,
-  });
+  res.json({ userId: existingUser.id, email: existingUser.email, token });
 };
-
-exports.signup = signup;
-exports.login = login;
