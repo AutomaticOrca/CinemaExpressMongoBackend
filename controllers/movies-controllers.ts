@@ -1,7 +1,12 @@
-const HttpError = require("../models/http-error");
-const Movie = require("../models/movie");
+import { Request, Response, NextFunction } from "express";
+import HttpError from "../models/http-error";
+import Movie from "../models/movie";
 
-const getMovieById = async (req, res, next) => {
+export const getMovieById = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   const movieId = req.params.mid;
 
   let movie;
@@ -14,12 +19,11 @@ const getMovieById = async (req, res, next) => {
 
   if (!movie) {
     const error = new HttpError(
-      "getMovieById failed, maybe this movieId is not existing.",
+      "getMovieById failed, maybe this movieId does not exist.",
       404
     );
     return next(error);
   }
+
   res.json({ movie: movie.toObject({ getters: true }) });
 };
-
-exports.getMovieById = getMovieById;

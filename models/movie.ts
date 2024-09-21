@@ -1,7 +1,23 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+import { Schema, model, Document } from "mongoose";
 
-const movieSchema = new Schema(
+interface IMovie extends Document {
+  plot: string;
+  genres: string[];
+  runtime: number;
+  cast: string[];
+  poster: string;
+  title: string;
+  countries: string[];
+  released: Date;
+  directors: string[];
+  awards: string;
+  year: number;
+  rateTomato: number;
+  rateImdb: number;
+  rateMetacritic: number;
+}
+
+const movieSchema = new Schema<IMovie>(
   {
     plot: {
       type: String,
@@ -67,6 +83,6 @@ const movieSchema = new Schema(
   }
 );
 
-const Movie = mongoose.model("Movie", movieSchema);
+const Movie = model<IMovie>("Movie", movieSchema);
 
-module.exports = Movie;
+export default Movie;
