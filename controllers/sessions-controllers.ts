@@ -1,7 +1,12 @@
-const HttpError = require("../models/http-error");
-const Session = require("../models/session");
+import { Request, Response, NextFunction } from "express";
+import HttpError from "../models/http-error";
+import Session from "../models/session";
 
-const getNext14DaysSession = async (req, res) => {
+export const getNext14DaysSession = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   try {
     const today = new Date();
     const next14Days = new Date();
@@ -15,15 +20,21 @@ const getNext14DaysSession = async (req, res) => {
         ],
       },
     });
+
     res.status(200).json({
       sessions: sessions.map((session) => session.toObject({ getters: true })),
     });
   } catch (error) {
-    res.status(500).send(error.message);
+    const err = error as Error;
+    res.status(500).send(err.message);
   }
 };
 
-const getNext90DaysSession = async (req, res) => {
+export const getNext90DaysSession = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   try {
     const today = new Date();
     const next90Days = new Date();
@@ -37,15 +48,21 @@ const getNext90DaysSession = async (req, res) => {
         ],
       },
     });
+
     res.status(200).json({
       sessions: sessions.map((session) => session.toObject({ getters: true })),
     });
   } catch (error) {
-    res.status(500).send(error.message);
+    const err = error as Error;
+    res.status(500).send(err.message);
   }
 };
 
-const getSessionById = async (req, res, next) => {
+export const getSessionById = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   const sessionId = req.params.sid;
 
   let session;
@@ -63,9 +80,6 @@ const getSessionById = async (req, res, next) => {
     );
     return next(error);
   }
+
   res.json({ session: session.toObject({ getters: true }) });
 };
-
-exports.getNext14DaysSession = getNext14DaysSession;
-exports.getNext90DaysSession = getNext90DaysSession;
-exports.getSessionById = getSessionById;
