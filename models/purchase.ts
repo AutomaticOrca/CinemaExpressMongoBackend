@@ -1,7 +1,21 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+import { Schema, model, Document } from "mongoose";
 
-const TicketSchema = new Schema({
+interface ITicket {
+  type: "NORMAL" | "DISCOUNTED";
+  number: number;
+  price: number;
+}
+
+interface IPurchase extends Document {
+  sessionId: Schema.Types.ObjectId;
+  userId: Schema.Types.ObjectId;
+  tickets: ITicket[];
+  status: "PENDING" | "PAID" | "CANCELLED" | "REFUNDED";
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+const TicketSchema = new Schema<ITicket>({
   type: {
     type: String,
     required: true,
@@ -17,14 +31,14 @@ const TicketSchema = new Schema({
   },
 });
 
-const purchaseSchema = new Schema({
+const purchaseSchema = new Schema<IPurchase>({
   sessionId: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "Session",
     required: true,
   },
   userId: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "User",
     required: true,
   },
@@ -47,6 +61,6 @@ const purchaseSchema = new Schema({
   },
 });
 
-const Purchase = mongoose.model("Purchase", purchaseSchema);
+const Purchase = model<IPurchase>("Purchase", purchaseSchema);
 
-module.exports = Purchase;
+export default Purchase;

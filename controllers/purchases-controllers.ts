@@ -1,15 +1,16 @@
-const mongoose = require("mongoose");
-const Purchase = require("../models/purchase");
-const Session = require("../models/session");
-const User = require("../models/user");
+import { Request, Response } from "express";
+import mongoose from "mongoose";
+import Purchase from "../models/purchase";
+import Session from "../models/session";
+import User from "../models/user";
 
-async function purchaseTicket(req, res) {
+export const purchaseTicket = async (req: Request, res: Response) => {
   const { sessionId, userId, tickets } = req.body;
 
   try {
     const newPurchase = new Purchase({
-      sessionId,
-      userId,
+      sessionId: new mongoose.Types.ObjectId(sessionId),
+      userId: new mongoose.Types.ObjectId(userId),
       tickets,
       status: "PENDING",
     });
@@ -22,36 +23,31 @@ async function purchaseTicket(req, res) {
     });
   } catch (error) {
     return res.status(500).json({
-      message: "Error purchase ticket",
-      error: error.message,
+      message: "Error purchasing ticket",
+      error: (error as Error).message,
     });
   }
-}
+};
 
-async function getUserPurchaseHistory(req, res) {
+export const getUserPurchaseHistory = async (req: Request, res: Response) => {
   try {
     const { userId } = req.params;
 
-    // Find the user
     const user = await User.findById(userId);
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
 
-    // Find the user's purchases
     const purchases = await Purchase.find({ userId }).populate(
       "sessionId",
       "sessionName sessionTime"
-    ); // Populating session details
+    );
 
     return res.status(200).json({ purchases });
   } catch (error) {
     return res.status(500).json({
       message: "Error fetching purchase history",
-      error: error.message,
+      error: (error as Error).message,
     });
   }
-}
-
-exports.purchaseTicket = purchaseTicket;
-exports.getUserPurchaseHistory = getUserPurchaseHistory;
+};
