@@ -40,16 +40,23 @@ app.use((error: HttpError, req: Request, res: Response, next: NextFunction) => {
   res.json({ message: error.message || "An unknown error occurred!" });
 });
 
-mongoose
-  .connect(
-    "mongodb+srv://admin:admin1220@cluster0.uu1yaxt.mongodb.net/Paradiso"
-  )
-  .then(() => {
+const connectToMongoAndStartServer = async () => {
+  try {
+    await mongoose.connect(
+      "mongodb+srv://admin:admin1220@cluster0.uu1yaxt.mongodb.net/Paradiso"
+    );
     console.log("Connected to MongoDB");
-    app.listen(5005, "0.0.0.0", () => {
+
+    const server = app.listen(5005, "0.0.0.0", () => {
       console.log("Listening on port 5005");
     });
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+    return server;
+  } catch (error) {
+    console.error("Database connection failed:", error);
+    process.exit(1);
+  }
+};
+
+const serverPromise = connectToMongoAndStartServer();
+
+export { app, serverPromise };

@@ -7,7 +7,53 @@ import User from "../models/user";
 export const purchaseTicket = async (req: Request, res: Response) => {
   const { sessionId, userId, tickets } = req.body;
 
+  // Check for required fields
+  if (
+    !sessionId ||
+    !userId ||
+    !tickets ||
+    !Array.isArray(tickets) ||
+    tickets.length === 0
+  ) {
+    return res.status(400).json({ message: "Missing or invalid input data" });
+  }
+
   try {
+    // Verify if sessionId exists
+    const session = await Session.findById(sessionId);
+    if (!session) {
+      return res.status(404).json({ message: "Session not found" });
+    }
+
+    // Verify if userId exists
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    // Validate each entry in the tickets array
+    const validTicketTypes = ["NORMAL", "DISCOUNTED"];
+    for (const ticket of tickets) {
+      if (!ticket.type || !validTicketTypes.includes(ticket.type)) {
+        return res
+          .status(400)
+          .json({ message: `Invalid ticket type: ${ticket.type}` });
+      }
+      if (
+        !ticket.number ||
+        ticket.number <= 0 ||
+        !ticket.price ||
+        ticket.price <= 0
+      ) {
+        return res
+          .status(400)
+          .json({
+            message: `Invalid ticket details: ${JSON.stringify(ticket)}`,
+          });
+      }
+    }
+
+    // Create a new purchase record
     const newPurchase = new Purchase({
       sessionId: new mongoose.Types.ObjectId(sessionId),
       userId: new mongoose.Types.ObjectId(userId),
