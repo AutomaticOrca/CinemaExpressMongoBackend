@@ -1,0 +1,590 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Cinema API",
+    "description": "API documentation for cinema-related endpoints including user management"
+  },
+  "host": "localhost:3000",
+  "basePath": "/api/v1",
+  "schemes": ["http"],
+  "paths": {
+    "/users/signup": {
+      "post": {
+        "summary": "User Signup",
+        "description": "Create a new user account by providing name, email, and password.",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "User signup request body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SignupRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "User successfully created",
+            "schema": {
+              "$ref": "#/definitions/SignupResponse"
+            }
+          },
+          "422": {
+            "description": "User already exists"
+          },
+          "500": {
+            "description": "Signup failed due to server error"
+          }
+        }
+      }
+    },
+    "/users/login": {
+      "post": {
+        "summary": "User Login",
+        "description": "Login with email and password to receive a JWT token.",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "User login request body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LoginRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully logged in",
+            "schema": {
+              "$ref": "#/definitions/LoginResponse"
+            }
+          },
+          "401": {
+            "description": "Invalid email or password"
+          },
+          "500": {
+            "description": "Login failed due to server error"
+          }
+        }
+      }
+    },
+    "/movies/{mid}": {
+      "get": {
+        "summary": "Get Movie by ID",
+        "description": "Retrieve a movie's details using its unique movie ID.",
+        "parameters": [
+          {
+            "name": "mid",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the movie to retrieve",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Movie details successfully retrieved",
+            "schema": {
+              "$ref": "#/definitions/MovieGetByIdResponse"
+            }
+          },
+          "404": {
+            "description": "Movie not found"
+          },
+          "500": {
+            "description": "Server error occurred while retrieving the movie"
+          }
+        }
+      }
+    },
+    "/sessions/nowshowing": {
+      "get": {
+        "summary": "Get sessions for the next 14 days",
+        "description": "Retrieve all sessions scheduled to happen within the next 14 days.",
+        "responses": {
+          "200": {
+            "description": "Sessions successfully retrieved",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Session"
+              }
+            }
+          },
+          "500": {
+            "description": "Failed to retrieve sessions"
+          }
+        }
+      }
+    },
+    "/sessions/{sid}": {
+      "get": {
+        "summary": "Get session by ID",
+        "description": "Retrieve session details using the session ID.",
+        "parameters": [
+          {
+            "name": "sid",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the session to retrieve",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Session details successfully retrieved",
+            "schema": {
+              "$ref": "#/definitions/Session"
+            }
+          },
+          "404": {
+            "description": "Session not found"
+          },
+          "500": {
+            "description": "Failed to retrieve session"
+          }
+        }
+      }
+    },
+    "/cinemas": {
+      "get": {
+        "summary": "Get all cinemas",
+        "description": "Retrieve a list of all cinemas.",
+        "responses": {
+          "200": {
+            "description": "A list of cinemas",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Cinema"
+              }
+            }
+          },
+          "500": {
+            "description": "Failed to retrieve cinemas"
+          }
+        }
+      }
+    },
+    "/cinemas/{cid}": {
+      "get": {
+        "summary": "Get a cinema by ID",
+        "description": "Retrieve details of a specific cinema by its ID.",
+        "parameters": [
+          {
+            "name": "cid",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the cinema to retrieve",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Cinema details successfully retrieved",
+            "schema": {
+              "$ref": "#/definitions/Cinema"
+            }
+          },
+          "404": {
+            "description": "Cinema not found"
+          },
+          "500": {
+            "description": "Failed to retrieve cinema"
+          }
+        }
+      }
+    },
+    "/purchases": {
+      "post": {
+        "summary": "Purchase a ticket",
+        "description": "Create a new ticket purchase for a session.",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Purchase request body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PurchaseRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Ticket successfully purchased",
+            "schema": {
+              "$ref": "#/definitions/PurchaseResponse"
+            }
+          },
+          "500": {
+            "description": "Purchase failed due to server error"
+          }
+        }
+      }
+    },
+    "/purchases/user/{userId}": {
+      "get": {
+        "summary": "Get user purchase history",
+        "description": "Retrieve the purchase history of a user by their user ID.",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the user",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User purchase history retrieved successfully",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Purchase"
+              }
+            }
+          },
+          "404": {
+            "description": "User not found"
+          },
+          "500": {
+            "description": "Failed to retrieve user purchase history"
+          }
+        }
+      }
+    },
+    "/purchases/{purchaseId}": {
+      "get": {
+        "summary": "Fetch purchase by ID",
+        "description": "Retrieve details of a specific purchase by its ID.",
+        "parameters": [
+          {
+            "name": "purchaseId",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the purchase",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Purchase details retrieved successfully",
+            "schema": {
+              "$ref": "#/definitions/PurchaseDetail"
+            }
+          },
+          "404": {
+            "description": "Purchase not found"
+          },
+          "500": {
+            "description": "Failed to retrieve purchase details"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "SignupRequest": {
+      "type": "object",
+      "required": ["name", "email", "password"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "John Doe"
+        },
+        "email": {
+          "type": "string",
+          "example": "john.doe@example.com"
+        },
+        "password": {
+          "type": "string",
+          "example": "password123"
+        }
+      }
+    },
+    "SignupResponse": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "example": "601c8a72f0b1a624e2fd1e9f"
+        },
+        "email": {
+          "type": "string",
+          "example": "john.doe@example.com"
+        },
+        "token": {
+          "type": "string",
+          "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        }
+      }
+    },
+    "LoginRequest": {
+      "type": "object",
+      "required": ["email", "password"],
+      "properties": {
+        "email": {
+          "type": "string",
+          "example": "john.doe@example.com"
+        },
+        "password": {
+          "type": "string",
+          "example": "password123"
+        }
+      }
+    },
+    "LoginResponse": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "example": "601c8a72f0b1a624e2fd1e9f"
+        },
+        "email": {
+          "type": "string",
+          "example": "john.doe@example.com"
+        },
+        "token": {
+          "type": "string",
+          "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        }
+      }
+    },
+    "MovieGetByIdResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "example": "607c191e810c19729de860ea"
+        },
+        "title": {
+          "type": "string",
+          "example": "Inception"
+        },
+        "description": {
+          "type": "string",
+          "example": "A mind-bending thriller about dream invasion."
+        },
+        "releaseDate": {
+          "type": "string",
+          "example": "2010-07-16"
+        },
+        "director": {
+          "type": "string",
+          "example": "Christopher Nolan"
+        },
+        "genre": {
+          "type": "string",
+          "example": "Sci-Fi"
+        },
+        "rating": {
+          "type": "number",
+          "format": "float",
+          "example": 8.8
+        }
+      }
+    },
+    "Session": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "example": "607c191e810c19729de860ea"
+        },
+        "movieId": {
+          "type": "string",
+          "example": "607c191e810c19729de860eb"
+        },
+        "cinemaId": {
+          "type": "string",
+          "example": "607c191e810c19729de860ec"
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time",
+          "example": "2024-10-15T20:00:00Z"
+        },
+        "availableSeats": {
+          "type": "number",
+          "example": 50
+        }
+      }
+    },
+    "Cinema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "example": "607c191e810c19729de860ea"
+        },
+        "name": {
+          "type": "string",
+          "example": "Cinema City"
+        },
+        "location": {
+          "type": "string",
+          "example": "123 Main St, Sydney, Australia"
+        },
+        "numberOfScreens": {
+          "type": "integer",
+          "example": 10
+        }
+      }
+    },
+    "PurchaseRequest": {
+      "type": "object",
+      "required": ["sessionId", "userId", "tickets"],
+      "properties": {
+        "sessionId": {
+          "type": "string",
+          "example": "605c8a72f0b1a624e2fd1e9f"
+        },
+        "userId": {
+          "type": "string",
+          "example": "605c8a72f0b1a624e2fd1e9f"
+        },
+        "tickets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "example": "ADULT"
+              },
+              "quantity": {
+                "type": "integer",
+                "example": 2
+              }
+            }
+          }
+        }
+      }
+    },
+    "PurchaseResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string",
+          "example": "Ticket purchased successfully"
+        },
+        "purchase": {
+          "$ref": "#/definitions/Purchase"
+        }
+      }
+    },
+    "Purchase": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "example": "605c8a72f0b1a624e2fd1e9f"
+        },
+        "sessionId": {
+          "type": "string",
+          "example": "605c8a72f0b1a624e2fd1e9f"
+        },
+        "userId": {
+          "type": "string",
+          "example": "605c8a72f0b1a624e2fd1e9f"
+        },
+        "tickets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "example": "ADULT"
+              },
+              "quantity": {
+                "type": "integer",
+                "example": 2
+              }
+            }
+          }
+        },
+        "status": {
+          "type": "string",
+          "example": "PENDING"
+        }
+      }
+    },
+    "PurchaseDetail": {
+      "type": "object",
+      "properties": {
+        "purchaseId": {
+          "type": "string",
+          "example": "605c8a72f0b1a624e2fd1e9f"
+        },
+        "sessionDate": {
+          "type": "string",
+          "format": "date",
+          "example": "2024-10-15"
+        },
+        "sessionTime": {
+          "type": "string",
+          "example": "2:00 PM"
+        },
+        "sessionEndTime": {
+          "type": "string",
+          "example": "4:30 PM"
+        },
+        "movieName": {
+          "type": "string",
+          "example": "Inception"
+        },
+        "movieImg": {
+          "type": "string",
+          "example": "https://example.com/poster.jpg"
+        },
+        "movieDuration": {
+          "type": "string",
+          "example": "2 hrs 30 mins"
+        },
+        "cinemaName": {
+          "type": "string",
+          "example": "Cinema City"
+        },
+        "userName": {
+          "type": "string",
+          "example": "John Doe"
+        },
+        "userEmail": {
+          "type": "string",
+          "example": "john.doe@example.com"
+        },
+        "tickets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "example": "ADULT"
+              },
+              "quantity": {
+                "type": "integer",
+                "example": 2
+              }
+            }
+          }
+        },
+        "status": {
+          "type": "string",
+          "example": "PENDING"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "example": "2024-10-12T10:00:00Z"
+        }
+      }
+    }
+  }
+}
