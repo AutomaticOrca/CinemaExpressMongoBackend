@@ -26,7 +26,7 @@ Feel free to test it.
 
 
 
-Or you can try the link I deployed to aws EC2
+[API Document with Swagger]: http://13.54.7.53:5005/api-docs/	" Note: It may take a few seconds to load due to server response time "
 
-http://13.54.7.53:5005/api/cinemas
+ 
 
